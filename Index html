@@ -1,0 +1,253 @@
+Html:
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Pene Électrique - Innovation & Réparation</title>
+    <meta property="og:title" content="Pene Électrique - Innovation & Réparation" />
+    <meta property="og:description" content="Expert en réparation et optimisation de vélos électriques, trottinettes et systèmes électroniques à Thiès." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVIGATION RAPIDE (FLOTTANTE) -->
+    <div class="quick-nav" id="quickNav">
+        <button class="quick-nav-toggle" id="quickNavToggle">
+            <i class="lucide lucide-more-horizontal"></i>
+        </button>
+        <div class="quick-nav-menu">
+            <a href="#services" class="quick-nav-item" data-tooltip="Services">
+                <i class="lucide lucide-settings"></i>
+                <span>Services</span>
+            </a>
+            <a href="#reservation" class="quick-nav-item" data-tooltip="Réservation">
+                <i class="lucide lucide-calendar-check"></i>
+                <span>Réservation</span>
+            </a>
+            <a href="#apropos" class="quick-nav-item" data-tooltip="À propos">
+                <i class="lucide lucide-info"></i>
+                <span>À propos</span>
+            </a>
+            <a href="#contact" class="quick-nav-item" data-tooltip="Contact">
+                <i class="lucide lucide-phone"></i>
+                <span>Contact</span>
+            </a>
+            <a href="#social" class="quick-nav-item" data-tooltip="Réseaux">
+                <i class="lucide lucide-share-2"></i>
+                <span>Réseaux</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">Pene Électrique</div>
+            <div class="nav-links">
+                <a href="#accueil" class="nav-link">Accueil</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#reservation" class="nav-link">Réservation</a>
+                <a href="#apropos" class="nav-link">À propos</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#social" class="nav-link">Réseaux</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="lucide lucide-menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#reservation">Réservation</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+            <a href="#social">Réseaux</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="accueil" class="hero">
+        <div class="hero-bg">
+            <div class="hero-image"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Pene Électrique</h1>
+            <p>Innovation – Réparation – Performance</p>
+            <button class="btn btn-primary btn-lg" id="reservationBtn">
+                <i class="lucide lucide-calendar-check"></i>
+                Réserver maintenant
+            </button>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Nos Services</h2>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Les services seront injectés dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <!-- RÉSERVATION -->
+    <section id="reservation" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Réservez votre intervention</h2>
+            <div class="reservation-form">
+                <form id="bookingForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Nom complet</label>
+                            <input type="text" class="form-input" placeholder="Votre nom" required id="nameInput">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Téléphone / WhatsApp</label>
+                            <input type="tel" class="form-input" placeholder="705567447" required id="phoneInput">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Type de service</label>
+                        <div class="services-selector" id="servicesSelector">
+                            <!-- Les options de service seront injectées dynamiquement -->
+                        </div>
+                        <input type="hidden" id="selectedService" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Date souhaitée</label>
+                            <input type="date" class="form-input" required id="dateInput">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Heure souhaitée</label>
+                            <select class="form-input" required id="timeSelect">
+                                <option value="">Sélectionnez un horaire</option>
+                                <option value="08-10">08h00 – 10h00</option>
+                                <option value="10-12">10h00 – 12h00</option>
+                                <option value="14-16">14h00 – 16h00</option>
+                                <option value="16-18">16h00 – 18h00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description du problème</label>
+                        <textarea class="form-input" rows="4" placeholder="Décrivez votre panne ou problème" id="descriptionTextarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <i class="lucide lucide-calendar-check"></i>
+                        Confirmer le rendez-vous
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="image-placeholder-content">
+                            <i class="lucide lucide-cpu"></i>
+                            <h3>Atelier Professionnel</h3>
+                            <p>Équipement de pointe pour diagnostics précis</p>
+                            <div class="image-stats">
+                                <div class="stat">
+                                    <i class="lucide lucide-check-circle"></i>
+                                    <span>+500 Réparations</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="lucide lucide-users"></i>
+                                    <span>Clients Satisfaits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title text-left">À propos de Pene Électrique</h2>
+                    <p class="text-muted">Basée à Thiès, Pene Électrique est spécialisée dans la réparation, le diagnostic et l'optimisation des systèmes électriques modernes : vélos électriques, trottinettes, moteurs, contrôleurs et systèmes électroniques avancés.</p>
+                    <p class="text-muted">Notre mission est de rendre la mobilité électrique plus fiable, durable et accessible pour tous. Nous croyons en l'innovation, la qualité, la transparence et l'excellence dans notre travail.</p>
+                    <p class="text-muted">Chaque réparation est faite avec précision, rigueur et professionnalisme. Nous restons disponibles sur WhatsApp pour un suivi après intervention.</p>
+                    <div class="about-highlight">
+                        <p>
+                            <i class="lucide lucide-phone"></i>
+                            Disponible sur WhatsApp pour un suivi après intervention
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title text-white">Contactez-nous</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="lucide lucide-map-pin icon"></i>
+                    <h3>Thiès, Sénégal</h3>
+                </div>
+                <a href="https://wa.me/221705567447" target="_blank" class="contact-card">
+                    <i class="lucide lucide-phone icon"></i>
+                    <h3>705 567 447</h3>
+                </a>
+[  ]                 <a href="mailto:contact@ penemamecheikh5@gmail.com" class="contact-card">
+                    <i class="lucide lucide-mail icon"></i>
+                    <h3>Email</h3>
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="lucide lucide-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="lucide lucide-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="lucide lucide-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RÉSEAUX SOCIAUX - CALENDRIER -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 class="section-title">Plan de publication – Réseaux sociaux</h2>
+            <div class="social-calendar">
+                <table id="socialTable">
+                    <thead>
+                        <tr>
+                            <th>Jour</th>
+                            <th>Catégorie</th>
+                            <th>Idée vidéo</th>
+                            <th>Texte</th>
+                            <th>Hashtags</th>
+                            <th>CTA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="socialTableBody">
+                        <!-- Les lignes seront ajoutées dynamiquement -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pene Électrique – Tous droits réservés</p>
+            <p class="footer-info">Thiès, Sénégal | WhatsApp: 705 567 447 | Email: contact@peneelectrique.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
